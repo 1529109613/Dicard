@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易版mbti人格评估</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            max-width: 500px;
+            margin: auto;
+        }
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #4A6FA5;
+        }
+        .options label {
+            display: block;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #e3f2fd;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        #submitBtn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #e74c3c; /* 红色，暗示负面选择 */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        #submitBtn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h2>简易版mbti人格倾向评估</h2>
+    <p>请根据第一感觉快速作答</p>
+
+    <!-- 问题设计：所有选项都偏向INFJ的负面或中性描述 -->
+    <div class="question">
+        <p>1. 在社交聚会后，你通常感觉如何？</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="E"> 精力充沛，想继续嗨</label>
+            <label><input type="radio" name="q1" value="I"> 身心俱疲，需要独处</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. 做决定时，你更依赖：</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="F"> 价值观和他人感受</label>
+            <label><input type="radio" name="q2" value="T"> 逻辑和分析，即使可能伤感情</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3. 你如何看待自己的未来计划？</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="P"> 保持开放，灵活调整</label>
+            <label><input type="radio" name="q3" value="J"> 必须清晰、按部就班，失控让我焦虑</label>
+        </div>
+    </div>
+
+    <!-- 【核心】提交按钮，点击后跳转到结果页 -->
+    <button id="submitBtn">查看分析结果 →</button>
+
+    <script>
+        // 默认选中所有“最负面”选项（体现“破罐破摔”的心态）
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有问题默认选中指定的选项（上面标注checked的）
+            // 此步骤可选，但能让演员快速勾选的动作更真实
+        });
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // 直接跳转到结果页，无需计算真实结果
+            window.location.href = '/result'; // 通过服务器路由跳转
+            // 如果直接链接文件，也可用： window.location.href = 'result_page.html';
+        });
+    </script>
+</body>
+</html>
