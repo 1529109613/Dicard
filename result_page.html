@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简易版mbti人格评估报告</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .report-card {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .personality-header {
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+        .type-code {
+            font-size: 4em;
+            font-weight: 800;
+            color: #2d3436;
+            letter-spacing: 5px;
+            margin: 10px 0;
+        }
+        .type-name {
+            font-size: 1.8em;
+            color: #636e72;
+            margin-bottom: 10px;
+        }
+        .type-desc {
+            font-size: 1.1em;
+            color: #74b9ff;
+        }
+        .highlight-box {
+            background: #fffde7;
+            border-left: 6px solid #fdcb6e;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 15px rgba(253, 203, 110, 0.2);
+        }
+        .highlight-title {
+            color: #e17055;
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+        .critical-phrase {
+            background: #ffeb3b;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #d35400;
+            font-size: 1.2em;
+            margin: 20px 0;
+            display: inline-block;
+            border: 2px dashed #e74c3c;
+            animation: pulse 2s infinite; /* 添加轻微闪烁动画吸引注意 */
+        }
+        @keyframes pulse {
+            0% { border-color: #e74c3c; }
+            50% { border-color: #ffeb3b; }
+            100% { border-color: #e74c3c; }
+        }
+        .insight-text {
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        .footnote {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 40px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-card">
+        <div class="personality-header">
+            <div class="type-name">您的人格类型为：</div>
+            <div class="type-code">INFJ 提倡者</div>
+            <div class="type-desc">理想主义者 · 深沉的共情者 · 系统的构建者</div>
+        </div>
+
+        <p class="insight-text">您属于稀有的理想主义者类型（约占人口的1-2%）。您内心丰富，追求深度与意义，天生倾向于理解复杂系统与人性。然而，这种天赋常伴随着独特的内心挑战。</p>
+
+        <!-- 【核心高亮区域 - 镜头特写在此】 -->
+        <div class="highlight-box">
+            <h3 class="highlight-title">需要关注的成长领域</h3>
+            <p class="insight-text">INFJ型人常因追求完美和深刻，而陷入自我消耗的循环：</p>
+            <ul class="insight-text">
+                <li><strong>完美主义陷阱</strong>：在行动前过度反思，追求不切实际的“最佳解”。</li>
+                <li><strong>情感过载</strong>：过度吸收他人的情绪，导致自身能量枯竭。</li>
+                <li><strong>决策困难</strong>：在多种可能性中徘徊，难以启动。</li>
+            </ul>
+            <p class="insight-text">其核心原因往往在于：</p>
+            <!-- 【这是全片最关键的一行，用动画和特殊样式突出】 -->
+            <div class="critical-phrase">一个被心理学家称为“内在批判者”的强大内心声音。</div>
+            <p class="insight-text">它本意是保护您免于失败，但常发展为严苛的自我监控与批评，消耗大量心理能量，并可能引发焦虑与自我怀疑。识别这一模式，是与之建立健康关系的第一步。</p>
+        </div>
+
+        <p class="insight-text">您的道路在于：将深刻的直觉与同情心，通过具体、可完成的步骤转化为现实。每一次“完成”，都是对“完美”的最佳回应。</p>
+
+        <div class="footnote">
+            * 本评估基于有限问题，仅供参考。人格是流动的画卷，而非凝固的标签。
+        </div>
+    </div>
+
+    <script>
+        // 可选：页面加载后，让关键短语更醒目
+        window.onload = function() {
+            const phrase = document.querySelector('.critical-phrase');
+            setTimeout(() => {
+                phrase.style.transform = 'scale(1.05)';
+                phrase.style.transition = 'transform 0.5s ease';
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
